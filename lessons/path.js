@@ -2,6 +2,7 @@ const path = require('path');
 
 console.log('Склеивает пути',path.join(__dirname,"..")) // .. возвращает папку ниже(выше)
 const fullpath = path.resolve(__dirname, 'first', 'second.js');
+console.log(fullpath);
 console.log('Парсинг пути', path.parse(fullpath));
 console.log('разделитель в ОС', path.sep)
 console.log('Проверка на абсолютный путь', path.isAbsolute('first/second'))
