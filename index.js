@@ -2,45 +2,11 @@ require('dotenv').config()
 const http = require('http')
 const EventEmitter = require('events')
 const PORT = process.env.PORT || 5000
+const Router = require('./framework/Router')
 
 const emitter = new EventEmitter();
 
-class Router{
-    constructor() {
-        this.endpoints = {} // Создаем хеш-таблицу 
-    }
-    
-    request(method = "GET", path, handler) { // ОБРАБОТЧИК ЗАПРОСОВ
-        if(!this.endpoints[path]) { //Проверяем существует ли такой путь
-            this.endpoints[path] = {} // Если нет - создаем пустой объект
-        }
-        // /users {GET, POST, PUT} /posts {GET, POST, PUT, DELETE}
-        const endpoint = this.endpoints[path]; // Идентифицировали endpoint
 
-        if (endpoint[method]) { // проверяем есть ли по данному пути определенный метод
-            throw new Error(`[${method}] по адресу ${path} уже существует`)
-        }
-
-        endpoint[method] = handler;// по данному пути по данному методу мы передаем обработчик 
-        emitter.on(`[${path}]:[${method}]`,(req,res) => {
-            handler(req,res)
-        }) // [path]:[method]
-    }
-
-    // Оболочки для request, Абcтракции
-    get(path,handler) {
-        this.request('GET', path, handler);
-    }
-    post(path,handler) {
-        this.request('POST', path, handler);
-    }
-    put(path,handler) {
-        this.request('PUT', path, handler);
-    }
-    delete(path,handler) {
-        this.request('DELETE', path, handler);
-    }
-}
 
 const router = new Router();
 
