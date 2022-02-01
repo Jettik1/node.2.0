@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Jettik1/node2.0#readme",
   "dependencies": {
-    "cross-env": "^7.0.3",
     "dotenv": "^14.3.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
