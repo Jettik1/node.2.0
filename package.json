@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jettik1/node2.0.git"
+    "url": "git+https://github.com/Jettik1/node.2.0.git"
   },
   "author": "Jettik1",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jettik1/node2.0/issues"
+    "url": "https://github.com/Jettik1/node.2.0/issues"
   },
-  "homepage": "https://github.com/Jettik1/node2.0#readme",
+  "homepage": "https://github.com/Jettik1/node.2.0#readme",
   "dependencies": {
     "dotenv": "^14.3.2",
     "mongoose": "^6.1.10"
