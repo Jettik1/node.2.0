@@ -21,7 +21,7 @@ app.addRouter(userRouter);
 
 const start = async () => {
     try { // Здесь своя база данный MongoDB
-        await mongoose.connect('mongodb+srv://Jettik1:AdminPassword@jettik1cluster.qqwhp.mongodb.net/myFristDatabase?retryWrites=true&w=majority')
+        await mongoose.connect('mongodb+srv://Jettik1:AdminPassword@jettik1cluster.qqwhp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
         app.listen(PORT, () => console.log(`Server start as port: ${PORT}`));
 
     } catch (e) {
